@@ -1,0 +1,22 @@
+﻿@model IEnumerable<NewStudentProject.Models.Student>
+
+
+@*above is a list of students, not one student*@
+
+
+@*shorthand for project name.models.Class name
+means it receives one object of student class
+small m in model*@
+
+
+@{
+    ViewBag.Title = "ABC";
+}
+
+<h2>These are the students</h2>
+
+@foreach (var item in Model)
+{ 
+    <h2>Student Name: @item.FirstName @item.LastName</h2>
+}
+@*//large m in model*@
