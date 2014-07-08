@@ -16,10 +16,10 @@ namespace NewStudentProject.Models
         //properties represent the relationships
         //every Enrollment has access to one Student & Course
 
-        public Student student { get; set; }
-        public Course course { get; set; }
+        public virtual Student student { get; set; }
+        public virtual Course course { get; set; }
 
-
+        //virtual enables displaying null 
 
     }
 }

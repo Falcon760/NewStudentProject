@@ -52,4 +52,3 @@ c:\users\steve\documents\visual studio 2013\Projects\NewStudentProject\NewStuden
 c:\users\steve\documents\visual studio 2013\Projects\NewStudentProject\NewStudentProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\steve\documents\visual studio 2013\Projects\NewStudentProject\NewStudentProject\obj\Debug\NewStudentProject.dll
 c:\users\steve\documents\visual studio 2013\Projects\NewStudentProject\NewStudentProject\obj\Debug\NewStudentProject.pdb
-c:\users\steve\documents\visual studio 2013\Projects\NewStudentProject\NewStudentProject\obj\Debug\NewStudentProject.csprojResolveAssemblyReference.cache

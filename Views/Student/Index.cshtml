@@ -1,0 +1,60 @@
+﻿@model IEnumerable<NewStudentProject.Models.Student>
+@using NewStudentProject.Helpers;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*First is display name/followed by action method*@
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@*Student controller's search action method*@
+@using (Html.BeginForm("Search", "Student"))
+{ 
+    @Html.Editor("SearchBox")
+    <input type="submit" value="Search" />
+}
+
+<table class="table">
+    <tr>
+        @*These are the headers*@
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Truncate(item.LastName, 20)
+            @*@Html.DisplayFor(modelItem => item.LastName)*@
+        </td>
+        <td>
+            @Html.Truncate(item.FirstName, 20)
+            @*@Html.DisplayFor(modelItem => item.FirstName)*@
+        </td>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.EnrollmentDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
+        </td>
+    </tr>
+}
+
+</table>

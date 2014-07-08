@@ -1,0 +1,74 @@
+﻿@model NewStudentProject.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+    </dl>
+</div>
+
+<table class="table">
+    <tr>
+        @*These are the headers*@
+        <th>
+            @* @Html.DisplayNameFor(model => model.LastName) *@
+            Course Title
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FirstName) *@
+            Course Grade
+        </th>
+       
+    </tr>
+    @*Change Model to Model.Enrollments to show not just student but student enroll *@
+
+    @foreach (var item in Model.Enrollments)
+    {
+        <tr>
+            <td>
+                @*item is enrollment*@
+                @Html.DisplayFor(modelItem => item.course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
